@@ -18,7 +18,6 @@ public class CompanyService {
             int newCount = company.getRatingCount() + 1;
             double newAvgRating = (company.getAverageRating() * company.getRatingCount() + reviewMessage.getRating()) / newCount;
             company.setAverageRating(newAvgRating);
-            System.out.println("New Average Rating: " + newAvgRating);
             company.setRatingCount(newCount);
             companyRepository.save(company);
         }, () -> {
